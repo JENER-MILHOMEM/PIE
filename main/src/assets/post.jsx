@@ -24,7 +24,7 @@ function post() {
 
   return (
     <>
-      <div className="min-h-screen w-screen bg-slate-100">
+      <div className="min-h-screen w-screen bg-slate-300">
         {post.length === 0 ? (
           <div className="flex flex-col place-items-center py-60 gap-5">
             <h1 className="text-xl font-serif font-bold">
@@ -37,15 +37,16 @@ function post() {
             </div>
           </div>
         ) : (
-          post.map((posts) => (
-            <div className="flex flex-col text-center place-items-center">
-              <h1 className="text-center">esta aqui o post</h1>
-              <h2>{posts.comentario}</h2>
-              <div className="w-52">
-                <img src={posts.img} alt="img" />
-              </div>
-            </div>
-          ))
+          <div className="flex flex-wrap px-16 gap-5  ">
+            {post.length > 0 &&
+              post.map((posts) => (
+                <div className=" mt-10 flex-wrap bg-white px-4 pb-14 py-3  text-black  text-center">
+                  <img src={posts.img} alt="img" className="h-60 w-80" />
+                  <h1 className="">{posts.nome}</h1>
+                  
+                </div>
+              ))}
+          </div>
         )}
       </div>
     </>

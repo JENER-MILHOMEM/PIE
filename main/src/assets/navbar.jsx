@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+/* import { Link } from "react-router-dom"
 function navbar (){
     return (
       <>
@@ -25,4 +25,41 @@ function navbar (){
       </>
     );
 }
-export default navbar
+export default navbar */
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <div className="bg-white font-serif">
+      <div className="container mx-auto flex flex-wrap items-center justify-between p-6">
+        <div className="w-full md:w-auto text-center md:text-left mb-4 md:mb-0">
+          <Link to="/" className="text-black text-2xl font-bold">
+            GALLERY
+          </Link>
+        </div>
+        <div className="w-full md:w-auto flex flex-col md:flex-row gap-4 text-black text-xl">
+          <Link
+            to="/criadores"
+            className="font-bold hover:text-gray-700 px-3 py-2 rounded-sm"
+          >
+            Criadores
+          </Link>
+          <Link
+            to="/post"
+            className="font-bold hover:text-gray-700 px-3 py-2 rounded-sm"
+          >
+            Poste Fotos
+          </Link>
+          <Link
+            to="/get"
+            className="font-bold hover:text-gray-700 px-3 py-2 rounded-sm"
+          >
+            Minhas Fotos
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;

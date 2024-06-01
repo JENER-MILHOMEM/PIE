@@ -3,7 +3,7 @@ import File from "./file";
 import axios from "axios";
 import { Link } from "react-router-dom";
 function form() {
-  const [comentario, setcomentario] = useState();
+  const [nome, setnome] = useState();
   const [img, setImg] = useState();
   const [contador, setContador] = useState(0);
   const converter64 = (e) => {
@@ -21,7 +21,7 @@ function form() {
     /* setSobre({...sobre, [e.target.name]: e.target.value}) }*/
 
   const post = {
-    comentario: comentario,
+    nome: nome,
     img: img,
   };
   const options = {
@@ -44,8 +44,8 @@ function form() {
   }
 
   const inputComContador = (e) => {
-    setcomentario(e.target.value);
-    setContador(comentario.length);
+    setnome(e.target.value);
+    setContador(nome.length);
   };
 
   return (
@@ -60,18 +60,18 @@ function form() {
           </div>
           <div className="flex flex-col gap-3 w-96 ">
             <label className="text-center font-semibold ">
-              Adcione Um Comentario:
+              Adcione Um Nome A Sua Foto:
             </label>
             <input
               type="text"
               onChange={(e) => inputComContador(e)}
               className="border border-slate-700 bg-slate-300 px-2 py-3 rounded-md"
-              maxLength="101"
-              name="comentario"
+              maxLength="21"
+              name="nome"
             />
           </div>
           <div className="pl-72">
-            <p>{contador}/100</p>
+            <p>{contador}/20</p>
           </div>
           <div className="flex flex-col bg-slate-300 hover:bg-slate-500 w-36 py-2 hover:font-bold text-center">
             <input type="submit" value="postar" />
